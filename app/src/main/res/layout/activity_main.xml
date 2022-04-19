@@ -30,14 +30,14 @@
         android:id="@+id/textView"
         android:layout_width="307dp"
         android:layout_height="96dp"
-        android:layout_marginStart="52dp"
         android:layout_marginBottom="16dp"
-        android:text="Welcome to Sale Cars App"
+        android:text="Welcome to Car Market"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/Topview"
+        app:layout_constraintEnd_toEndOf="@+id/Topview"
         app:layout_constraintStart_toStartOf="@+id/Topview"
         tools:ignore="MissingConstraints" />
 

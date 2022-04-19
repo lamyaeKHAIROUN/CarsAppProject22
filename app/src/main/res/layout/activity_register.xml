@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <EditText
-        android:id="@+id/inputTellLog"
+        android:id="@+id/inputTel"
         android:layout_width="277dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -130,7 +130,7 @@
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="8dp"
         android:ems="10"
-        android:hint="Last name"
+        android:hint="Full name"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="14sp"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_person"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"  android:layout_width="100dp"/>
 
     <TextView
         android:id="@+id/textView"
@@ -168,7 +168,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/inputFirstN"
+        android:id="@+id/inputPseudo"
         android:layout_width="274dp"
         android:layout_height="41dp"
         android:layout_marginStart="32dp"
@@ -178,7 +178,7 @@
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="8dp"
         android:ems="10"
-        android:hint="First name"
+        android:hint="Pseudo name"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="14sp"
@@ -186,6 +186,20 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPassword"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
