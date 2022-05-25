@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,6 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
     private User user;
     private TextView alresyhaveacount;
     private ProgressBar progressBar;
+    private CheckBox cbBayer,cbAnnoncer;
+    private String  userRole;
     private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://myfirebase-8991d-default-rtdb.firebaseio.com/" );
 
     @Override
@@ -38,15 +41,17 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         psudo =findViewById(R.id.inputPseudo);
         fullName  =findViewById(R.id.inputName);
-        email=findViewById(R.id.inputEmailLog);
+        email=findViewById(R.id.carbrandEUpdate);
         tel=findViewById(R.id.inputTel);
         password=findViewById(R.id.inputPasswordLog);
-        alredyHaveAcount=findViewById(R.id.forgotPassword);
+        alredyHaveAcount=findViewById(R.id.aj);
         btnRegister=findViewById(R.id.btnLogin);
         mAuth = FirebaseAuth.getInstance();
         progressBar=findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
-        alresyhaveacount=findViewById(R.id.forgotPassword);
+        alresyhaveacount=findViewById(R.id.aj);
+        cbAnnoncer=findViewById(R.id.isAnnoncer);
+        cbBayer=findViewById(R.id.isBayer);
 
         alresyhaveacount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -70,6 +75,20 @@ public class RegisterActivity extends AppCompatActivity {
         String semail=email.getText().toString().trim();
         String stel=tel.getText().toString().trim();
         String spassword=password.getText().toString().trim();
+        Boolean isBayer=cbBayer.isChecked();
+        Boolean isAnnoncer=cbAnnoncer.isChecked();
+
+
+        if(isAnnoncer){
+            userRole="1";
+            userRole.trim();
+        }
+
+        if(isBayer){
+            userRole="2";
+            userRole.trim();
+
+        }
 
       /*  if(sfullName.isEmpty()||spseudo.isEmpty()||semail.isEmpty()||stel.isEmpty()||spassword.isEmpty()){
             Toast.makeText(RegisterActivity.this,"Please fill all feilds",Toast.LENGTH_SHORT).show();
@@ -109,13 +128,17 @@ public class RegisterActivity extends AppCompatActivity {
             password.requestFocus();
             return;
         }
+        if(cbBayer.isChecked()==false&&cbAnnoncer.isChecked()==false){
+            Toast.makeText(RegisterActivity.this,"You should choice an option Annoncer/Bayer",
+                    Toast.LENGTH_SHORT).show();
+        }
        else{
             mAuth.createUserWithEmailAndPassword(semail,spassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        user =new User(sfullName,semail,spseudo,stel);
-                 FirebaseDatabase.getInstance().getReference("Users").
+                        user =new User(sfullName,semail,spseudo,stel,userRole);
+                         FirebaseDatabase.getInstance().getReference("Users").
                          child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
                          setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                      @Override

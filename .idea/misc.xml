@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/delete.xml" value="0.1705" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_add.xml" value="0.2115" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1205" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_email.xml" value="0.1655" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_home.xml" value="0.2115" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_lock.xml" value="0.1585" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/ic_login_bk.xml" value="0.1605" />
@@ -12,13 +15,26 @@
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/round_bg.xml" value="0.1585" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/round_border.xml" value="0.1585" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/wave.xml" value="0.162" />
-        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_home.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_ad_car.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_login.xml" value="0.26685393258426965" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/exemple.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_add_annonce.xml" value="0.11030354852501069" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_description.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_my_ads.xml" value="0.1" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_profile.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/fragment_recycler.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/home_2.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/item.xml" value="0.22" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/item2.xml" value="0.2" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/update.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/menu/main_menu.xml" value="0.1675929884566054" />
       </map>
     </option>
   </component>

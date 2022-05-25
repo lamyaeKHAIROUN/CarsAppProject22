@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemCard"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:elevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/relHolder"
+        android:layout_width="347dp"
+        android:layout_height="161dp"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imageofcar"
+            android:layout_width="122dp"
+            android:layout_height="146dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textBrand"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car brande"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textModel"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textBrand"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car model"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="124dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textModel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car price"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/editicon"
+            android:layout_width="67dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_toRightOf="@id/textPrice"
+            android:src="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/deleteicon"
+            android:layout_width="79dp"
+            android:layout_height="42dp"
+            android:layout_below="@+id/editicon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@id/textModel"
+            android:background="@color/cardview_light_background"
+            android:src="@drawable/delete" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

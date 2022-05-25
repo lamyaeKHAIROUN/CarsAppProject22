@@ -13,10 +13,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.carsappproject.Entities.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email,password;
@@ -24,19 +31,22 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     private TextView backToRegister, forgotPassword;
+    private String userRole;
+    private DatabaseReference myRef;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        email=findViewById(R.id.inputEmailLog);
+        email=findViewById(R.id.carbrandEUpdate);
         password=findViewById(R.id.inputPasswordLog);
         btnLogin=findViewById(R.id.btnLogin);
         mAuth = FirebaseAuth.getInstance();
         progressBar=findViewById(R.id.progressBarLog);
         progressBar.setVisibility(View.INVISIBLE);
         backToRegister=findViewById(R.id.backToRegister);
-        forgotPassword=findViewById(R.id.forgotPassword);
+        forgotPassword=findViewById(R.id.aj);
 
 
         backToRegister.setOnClickListener(new View.OnClickListener() {
@@ -90,9 +100,44 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressBar.setVisibility(View.VISIBLE);
-                    //red to home
-                    Intent intent1 = new Intent(LoginActivity.this, Home.class);
-                    startActivity(intent1);
+                    FirebaseDatabase.getInstance().getReference("Users").
+                            child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    //get current user role
+                    mAuth = FirebaseAuth.getInstance();
+                    FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
+                     myRef = mFirebaseDatabase.getReference("Users");
+                    FirebaseUser user = mAuth.getCurrentUser();
+                     userID = user.getUid();
+
+                    myRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            //get user role
+                            User uInfo = new User();
+                            String userRole=dataSnapshot.child(userID).getValue(User.class).getUserRole();
+                            if(userRole.equals("1")){
+                                Toast.makeText(LoginActivity.this,"You're login as Annoncer!",Toast.LENGTH_SHORT).show();
+                                Intent intent1 = new Intent(LoginActivity.this, Home.class);
+                                startActivity(intent1);
+                            }
+                            else if(userRole.equals("2")){
+                                Toast.makeText(LoginActivity.this,"You're login as Bayer!",Toast.LENGTH_SHORT).show();
+                                Intent intent1 = new Intent(LoginActivity.this, BayerHome.class);
+                                startActivity(intent1);
+
+                            }
+
+                            else  Toast.makeText(LoginActivity.this,"I cannot get role!",Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
                 }
                 else {
                     Toast.makeText(LoginActivity.this,"Failde to login! Please check your email and password!",Toast.LENGTH_SHORT).show();
@@ -101,4 +146,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+   /* private void showData(DataSnapshot dataSnapshot) {
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            User uInfo = new User();
+            String userRole=ds.child(userID).getValue(User.class).getUserRole();
+            if(userRole.equals("1"));
+
+        }
+    }*/
 }
